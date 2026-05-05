@@ -14,14 +14,14 @@ def adicionar_noticia(texto, classificacao=None):
             noticia["classificação"] = classificacao
         noticias.append(noticia)
     else:
-        print("erro")
+        print("Não é possível adicionar uma notícia sem texto.")
 
 
 def listar_noticias():
     # lista todas as notícias
     for noticia in noticias:
         print("Texto:", noticias[noticia]["texto"])
-        print("Classificacao:", noticias[noticia]["classificação"])
+        print("Classificação:", noticias[noticia]["classificação"])
         print("-------------------")
 
 
@@ -43,7 +43,7 @@ def analisar_texto(texto):
         score = score + 1
 
     if score == 0:
-        return "confiavel"
+        return "confiável"
     elif score == 1:
         return "duvidosa"
     else:
@@ -52,12 +52,12 @@ def analisar_texto(texto):
 
 def adicionar_noticia_manualmente():
     texto = input("Digite o texto: ")
-    classificacao = input("Digite classificacao: ")
+    classificacao = input("Digite classificação: ")
 
     if classificacao == "":
-        adicionar_noticia(texto)
-    else:
-        adicionar_noticia(texto, classificacao)
+        classificacao = analisar_texto(texto)
+        
+    adicionar_noticia(texto, classificacao)
 
 
 def adicionar_noticia_automaticamente():
@@ -74,15 +74,15 @@ def menu():
         print("3 - listar")
         print("4 - sair")
 
-        op = input("opcao: ")
+        opcao = input("Opção: ")
 
-        if op == "1":
+        if opcao == "1":
             adicionar_noticia_manualmente()
-        elif op == "2":
+        elif opcao == "2":
             adicionar_noticia_automaticamente()
-        elif op == "3":
-            func2()
-        elif op == "4":
+        elif opcao == "3":
+            listar_noticias()
+        elif opcao == "4":
             break
         else:
             print("errado")
