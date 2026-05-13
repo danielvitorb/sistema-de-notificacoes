@@ -1,3 +1,11 @@
+"""
+Módulo de Interface (Interação com Usuário)
+
+Responsável por toda a comunicação do sistema com o usuário via terminal.
+Gerencia a exibição do menu, formatação das listas na tela (prints), 
+além da coleta e validação das entradas digitadas (inputs).
+"""
+
 from modelo import noticias, adicionar_noticia
 from servico import analisar_texto
 

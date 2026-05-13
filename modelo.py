@@ -1,3 +1,11 @@
+"""
+Módulo de Modelo (Dados)
+
+Responsável por gerenciar a estrutura de armazenamento do sistema.
+Mantém a lista global de notícias e a lógica base para a persistência 
+de novos registros na memória.
+"""
+
 noticias = []
 
 def adicionar_noticia(texto, classificacao=None):

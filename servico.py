@@ -1,3 +1,11 @@
+"""
+Módulo de Serviço (Lógica de Negócio)
+
+Responsável por centralizar a inteligência e as regras do sistema.
+Executa a análise textual para identificar os critérios de desinformação
+e retorna a classificação adequada para a notícia.
+"""
+
 def analisar_texto(texto):
     """
     Analisa o texto de uma notícia e retorna uma classificação de confiabilidade.
